@@ -1,0 +1,78 @@
+body,html {
+	padding:0;
+	margin:0;
+}
+body {
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    font-size: 62.5%;
+}
+
+.clearfix {
+	clear:both;
+}
+
+#main-wrapper{
+    border-radius: 5px;    
+    background-color: lightgrey;
+    /*width: 1015px;*/
+	width:100%;
+	min-width:1200px;
+    padding: 5px;
+    border: 2px solid navy;
+    /*margin: 10px;
+	margin-top:0px;*/
+}
+#canvas3d-controller-wrapper {
+	width:100%;
+}
+#canvas3d-wrapper{
+    float: left;
+	width:70%;
+    /*min-width: 500px;*/ 
+	height:673px;   
+}
+#canvas3d-title, #controller-title, #graph-title{
+    height: 25px;
+    color: #638EA8;
+    background-color: #E4EAED;    
+    border-top: 1px #85A8C2 solid;
+    border-right: 1px #85A8C2 solid;
+    border-bottom: 1px #85A8C2 solid;
+    border-left: 1px #85A8C2 solid;    
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+#canvas3d-view{
+    background-color: black;
+    height: 645px;
+}
+#controller-graph-wrapper{
+    /*padding-left: 505px;*/
+	float:right;
+	width:29%;
+    /*min-width: 500px;*/
+}
+#controller-wrapper{
+    height: 325px;
+    width: 100%;
+    background-color: #009999;
+    border: 1pt;
+	margin-bottom:20px;
+    /*    border-color: red;*/
+}
+#controller-view{
+    height: 300px;
+    width: 100%;
+}
+#graph-wrapper{
+    height: 325px;                         
+    width: 100%;
+}
+#graph-view{
+    height: 300px;                         
+    width: 100%;
+    border:1px solid #d3d3d3;
+    background-color: #fff;
+
+}

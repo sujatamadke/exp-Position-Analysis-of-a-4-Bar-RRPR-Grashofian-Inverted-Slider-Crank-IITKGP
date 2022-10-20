@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--------------------canvas2d---------------------------------->        
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/jquery/jquery-ui.css">
+
+        <!---------------------javascript library------------------------------->
+        <script type="text/javascript" src="../js/threejs/three.min.js"></script>
+        <script type="text/javascript" src="../js/threejs/TrackballControls.js"></script>
+        <script type="text/javascript" src="../js/threejs/Detector.js"></script>
+        <script type="text/javascript" src="../js/threejs/stats.min.js"></script> 
+
+        <!---------------------jquery and jquery-ui library------------------------------->
+        <script type="text/javascript" src="../js/jquery/jquery-1.10.2.js"></script>      
+        <script type="text/javascript" src="../js/jquery/jquery-ui-1.11.4.js"></script>
+
+        <!---------------------scene and controller------------------------------->
+        <script type="text/javascript" src="./js/axis.js"></script>
+        <script type="text/javascript" src="./js/scene.js"></script>
+        <script type="text/javascript" src="./js/controller.js"></script>
+
+        <!---------------------canvas2D controller------------------------------->
+        <script type="text/javascript" src="./js/canvas2D.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#controller-view").tabs();
+            });
+        </script>
+
+        <!---------------------Kinematics------------------------------->
+        <script type="text/javascript" src="./js/kinematics.js"></script>
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <h2>Position Analysis of a 4 Bar RRPR Grashofian Inverted Slider Crank</h2>
+            <div id="canvas3d-controller-wrapper">
+                <div id="canvas3d-wrapper">
+                    <div id="canvas3d-title">Simulator</div>            
+                    <div id="canvas3d-view"></div>   
+                    <div class="clearfix"></div>        
+                </div>
+
+                <div id="controller-graph-wrapper">
+                    <div id="controller-wrapper">
+                        <div id="controller-title">Controller</div>
+                        <div id="controller-view">                       
+                            <ul>
+                                <li><a href="#tabs-1">Input Data</a></li>
+                                <li><a href="#tabs-2">Plot Data</a></li>
+                                <li><a href="#tabs-3">Output Control</a></li>
+                            </ul>
+                            <div id="tabs-1">
+                                <p><label> L1 &nbsp</label>&nbsp;    
+                                    <label>
+                                        <input type="text" name="l1" id="L1">
+                                    </label>
+                                </p>
+                                <p><label> L2 &nbsp</label>&nbsp;    
+                                    <label>
+                                        <input type="text" name="l2" id="L2">
+                                    </label>
+                                </p>
+                                <p><label> L3 &nbsp</label>&nbsp;    
+                                    <label>
+                                        <input type="text" name="l3" id="L3">
+                                    </label>
+                                </p>
+                                <p><label> L4 &nbsp</label>&nbsp;    
+                                    <label>
+                                        <input type="text" name="l4" id="L4">
+                                    </label>
+                                </p>
+                                <p><label> L5 &nbsp</label>&nbsp;    
+                                    <label>
+                                        <input type="text" name="l5" id="L5">
+                                    </label>
+                                </p>
+                                <p><label> Theta5 &nbsp</label>&nbsp;    
+                                    <label>
+                                        <input type="text" name="theta5" id="Theta5">
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="submit" name="Submit" value="Submit" onClick="readInput()">
+                                    </label>
+                                </p>
+                            </div>
+                            <div id="tabs-2">
+                                <form name="form1" method="post" action="">
+                                    <p>
+                                        <label><input type="radio" name="RadioGroup1" id="th12x" value="th12">Theta 12</label>
+                                        <label><input type="radio" name="RadioGroup2" id="th12y" value="th12">Theta 12</label>
+                                        <br>
+                                        <label><input type="radio" name="RadioGroup1" id="s34x" value="s34">S 34</label>
+                                        <label><input type="radio" name="RadioGroup2" id="s34y" value="s34">S 34</label>
+                                        <br>
+                                        <label><input type="radio" name="RadioGroup1" id="th41x" value="th41">Theta 41</label>
+                                        <label><input type="radio" name="RadioGroup2" id="th41y" value="th41">Theta 41</label>
+                                        <br>
+                                        <!--							        <label><input type="radio" name="RadioGroup1" id="Cx" value="Cx">Coupler x</label>
+                                                                                                                <label><input type="radio" name="RadioGroup2" id="Cy" value="Cy">Coupler y</label>
+                                                                                                                <br>
+                                        -->						          </p>
+                                </form>
+                            </div>
+                            <div id="tabs-3">                           
+                                <label><br>Theta 12
+                                    <input id="slider12" type="range" min="-360" max="360" step="1" value="0" oninput="sliderChange12()">
+                                </label>
+                                <input id="rangeValue12" type="text" size="2" value="0">
+                                <label><br>S 34
+                                    <input id="slider23" type="range" min="-360" max="360" step="1" value="0" oninput="sliderChange23()">
+                                </label>
+                                <input id="rangeValue23" type="text" size="2" value="0">
+                                <label><br>Theta 41
+                                    <input id="slider41" type="range" min="-360" max="360" step="1" value="0" oninput="sliderChange41()">
+                                </label>
+                                <input id="rangeValue41" type="text" size="2" value="0">
+                                <p>
+                                    <label><input name="ToggleButton" type="checkbox"  id="toggle" value="1">Toggle Assembly Mode</label>
+                                </p>
+                            </div>
+                        </div>  
+                    </div><!-- end of controller-wrapper -->
+                    <div id="graph-wrapper">
+                        <div id="graph-title">Graph</div>
+                        <div id="graph-view"></div> 
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- end of controller-graph-wrapper -->
+            </div><!-- end of canvas3d-controller-wrapper -->
+            <div class="clearfix"></div>
+        </div><!-- end of main-wrapper -->
+    </body>
+</html>
