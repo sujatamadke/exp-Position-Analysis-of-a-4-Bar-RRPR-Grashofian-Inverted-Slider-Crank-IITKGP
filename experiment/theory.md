@@ -1,6 +1,6 @@
 ### Introduction
 Schematic Diagram of a 4 Bar RRPR Linkage
-<img src="experiment/images/RRRR_schematic.gif" width="10%">
+<img src="images/RRRR_schematic.gif" width="10%">
 Schematic Diagram of a 4 Bar RRPR Linkage
 
 The 4 bar RRRP mechanism (and its inversions - RRPR or RPRR) is another basic mechanism in studies on kinematics. 
@@ -15,5 +15,6 @@ the two, and e is the offset, then the following cases arise
 - l + e < L, shortest link is crank : Slider Crank (RRRP)
 - l + e < L, shortest link is coupler : Slider Rocker (RRRP)
 - l + e > L : Non Grashofian linkage
+
 For a more detailed introduction to Grashof criteria for linkages with one prismatic joint see the animated guide that follows. If undisturbed , the animation will proceed at a predetermined pace. You can either click on the animation itself to move from step to step as per your convenience. Alternatively you can use the controls at the bottom of the animation to see it at your own pace.
 
