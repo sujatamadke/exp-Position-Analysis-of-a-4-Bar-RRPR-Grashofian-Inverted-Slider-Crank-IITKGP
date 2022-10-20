@@ -1,5 +1,5 @@
 ### Introduction
-Schematic Diagram of a 4 Bar RRPR Linkage
+
 <img src="images/RRRR_schematic.gif" width="50%">
 Schematic Diagram of a 4 Bar RRPR Linkage
 
