@@ -1,0 +1,34 @@
+span.term {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: bold;
+    color: #556B2F;
+}
+
+section, article-sections, .heading, .content {
+    color:#000 !important;
+}
+p.heading-header{
+    text-align:left; 
+    font-size:18px; 
+    font-weight:bold;
+    padding-bottom: 10px;
+}
+p.heading-sub-header{
+    text-align:left; 
+    font-size:16px; 
+    font-weight:bold;
+    padding-bottom: 10px;
+}
+p.heading-content{
+    text-align:justify; 
+    padding-bottom: 10px;
+}
+p.image-content{
+    text-align: center;
+}
+p.image-caption{
+    text-align:center;
+    font-weight:bold;
+    padding-bottom: 10px;
+}
