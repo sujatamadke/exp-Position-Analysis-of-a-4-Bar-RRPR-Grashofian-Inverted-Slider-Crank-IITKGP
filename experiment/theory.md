@@ -1,6 +1,6 @@
 ### Introduction
-Schematic Diagram of a 4 Bar RRPR Linkage
-<img src="images/RRRR_schematic.gif" width="100%">
+
+<img src="images/RRRR_schematic.gif" width="50%">
 Schematic Diagram of a 4 Bar RRPR Linkage
 
 The 4 bar RRRP mechanism (and its inversions - RRPR or RPRR) is another basic mechanism in studies on kinematics. 
